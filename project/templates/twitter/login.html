@@ -1,0 +1,36 @@
+{% extends 'twitter/base.html' %}
+
+{% block content %}
+<body class="login-page">
+    <div class="twitter-login-box">
+        <header>
+            <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp" alt="twitter logo">
+            <h1>Login</h1>
+        </header>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-wrapper">
+                <label for="user-name-id">Username</label>
+                {{ form.username }}
+            </div>
+
+            <div class="input-wrapper">
+                <label for="password-id">Password</label>
+                {{ form.password }}
+            </div>
+            {% if form.errors %}
+            <div class="m-erro">
+                <p>Desculpe, mas as credenciais fornecidas são inválidas. Verifique novamente seu nome de usuário e senha.</p>
+            </div>
+            {% endif %}
+
+            <button class="twitter-btn">Entrar</button>
+        </form>
+
+        <div class="footer">
+            <a href="{% url 'register' %}">inscreva-se no twitter-EBAC</a>
+        </div>
+
+    </div>
+{% endblock content %}
