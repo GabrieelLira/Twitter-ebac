@@ -71,7 +71,7 @@ img {
 .tweet-header {
   display: flex;
   align-items: flex-start;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .tweet-header-info {
