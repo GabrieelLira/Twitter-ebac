@@ -28,23 +28,11 @@ class Post(models.Model):
 	content = models.TextField()
 	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
 
-
-	likes = models.ManyToManyField(User, related_name='profile_like')
-
-	def number_of_likes(self):
-		return self.likes.count()
-
 	class Meta:
 		ordering = ['-timestamp']
 
 	def __str__(self):
 		return self.content
-
-
-
-
-
-
 
 class Relationship(models.Model):
 	from_user = models.ForeignKey(User, related_name='relationships', on_delete=models.CASCADE)

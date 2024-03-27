@@ -7,9 +7,6 @@ from rest_framework import viewsets
 from project.serializer import ProfileSerializer
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
-from django.shortcuts import get_object_or_404
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 @login_required
 def home(request):
@@ -94,31 +91,3 @@ class ProfileViewSet(viewsets.ModelViewSet):
 	serializer_class = ProfileSerializer
 	authentication_classes = [BasicAuthentication]
 	permission_classes = [IsAuthenticated]
-
-
-
-
-def ProfileLike(request, pk):
-    post = get_object_or_404(Profile, id=request.POST.get('Profile_id'))
-    if post.likes.filter(id=request.user.id).exists():
-        post.likes.remove(request.user)
-    else:
-        post.likes.add(request.user)
-
-    return HttpResponseRedirect(reverse('Profile-detail', args=[str(pk)]))
-
-class ProfileDetailView(viewsets.ModelViewSet):
-    model = Profile
-    # template_name = MainApp/Profile_detail.html
-    # context_object_name = 'object'
-
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data(**kwargs)
-
-        likes_connected = get_object_or_404(Profile, id=self.kwargs['pk'])
-        liked = False
-        if likes_connected.likes.filter(id=self.request.user.id).exists():
-            liked = True
-        data['number_of_likes'] = likes_connected.number_of_likes()
-        data['post_is_liked'] = liked
-        return data
