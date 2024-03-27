@@ -107,7 +107,7 @@ def ProfileLike(request, pk):
 
     return HttpResponseRedirect(reverse('Profile-detail', args=[str(pk)]))
 
-class ProfileDetailView(DetailView):
+class ProfileDetailView(viewsets.ModelViewSet):
     model = Profile
     # template_name = MainApp/Profile_detail.html
     # context_object_name = 'object'
