@@ -20,12 +20,12 @@ img {
   border-radius: 100px;
   width: 55px;
   height: 55px;
-  margin-right: 15px;
+  margin-right: 16px;
 }
 
 
 .card {
-  border: none;
+  border-radius: none;
   
 }
 
@@ -63,7 +63,7 @@ img {
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 3px;
-  padding: 30px;
+  padding: 16px;
   border-bottom: 1px solid #e6ecf0;
   border-top: 1px solid #e6ecf0;
 }
@@ -71,7 +71,7 @@ img {
 .tweet-header {
   display: flex;
   align-items: flex-start;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .tweet-header-info {
