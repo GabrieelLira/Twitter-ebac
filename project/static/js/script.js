@@ -35,15 +35,3 @@ let countChar = () => {
 }
 
 textArea.addEventListener('input', countChar);
-
-var btn = document.getElementById("icon")
-function likeBtn(){
-	if (btn.classList.contains("far")){
-		btn.classList.remove("far")
-		btn.classList.add("fas")
-	} else{
-		btn.classList.remove("fas")
-		btn.classList.add("far")
-
-	}
-}
