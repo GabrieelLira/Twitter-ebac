@@ -233,12 +233,10 @@ a:link {
 }
 
 
-.like{
-  background: white;
-  border: none;
+.far{
+  color: #999;
 }
 
-.like:hover{
+.fas{
   color: red;
 }
-
