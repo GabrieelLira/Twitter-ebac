@@ -232,3 +232,13 @@ a:link {
      color: red;
 }
 
+
+.like{
+  background: white;
+  border: none;
+}
+
+.like:hover{
+  color: red;
+}
+
