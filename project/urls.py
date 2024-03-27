@@ -15,5 +15,6 @@ urlpatterns = [
 	path('editar/', views.editar, name='editar'),
 	path('follow/<str:username>/', views.follow, name='follow'),
 	path('unfollow/<str:username>/', views.unfollow, name='unfollow'),
+    path('Profile-like/<int:pk>', views.ProfileLike, name="Profile_like"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
