@@ -31,6 +31,8 @@ class Post(models.Model):
 
 	likes = models.ManyToManyField(User, related_name='profile_like')
 
+	def number_of_likes(self):
+		return self.likes.count()
 
 	class Meta:
 		ordering = ['-timestamp']
@@ -40,8 +42,6 @@ class Post(models.Model):
 
 
 
-def number_of_likes(self):
-    return self.likes.count()
 
 
 
